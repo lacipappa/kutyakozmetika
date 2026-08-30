@@ -1,36 +1,34 @@
 /* White Label i18n loader */
 (function () {
-  const supported = ["en", "es", "hu"];
+  const supported = ["hu", "en", "es"];
   const saved = localStorage.getItem("wl-language");
-  const browser = (navigator.language || "en").slice(0, 2).toLowerCase();
-  const lang = supported.includes(saved) ? saved : (supported.includes(browser) ? browser : "en");
+  const browser = (navigator.language || "hu").slice(0, 2).toLowerCase();
+  const lang = supported.includes(saved) ? saved : (supported.includes(browser) ? browser : "hu");
 
-  function applyTranslations() {
-    const dict = window.LNKR_LANG || {};
-    document.documentElement.lang = lang;
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-      const key = el.getAttribute("data-i18n");
-      if (dict[key] !== undefined) el.textContent = dict[key];
-    });
-    document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
-      const key = el.getAttribute("data-i18n-placeholder");
-      if (dict[key] !== undefined) el.placeholder = dict[key];
-    });
-    document.querySelectorAll("[data-lang]").forEach(el => {
-      el.classList.toggle("active", el.getAttribute("data-lang") === lang);
-    });
-  }
-
+  window.WHITE_LABEL_LANGUAGE = lang;
   window.setLanguage = function(next) {
     if (!supported.includes(next)) return;
     localStorage.setItem("wl-language", next);
     location.reload();
   };
 
-  window.WHITE_LABEL_LANGUAGE = lang;
+  window.applyWhiteLabelTranslations = function() {
+    const dict = window.LNKR_LANG || {};
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.dataset.i18n;
+      if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+      const key = el.dataset.i18nPlaceholder;
+      if (dict[key] !== undefined) el.placeholder = dict[key];
+    });
+    document.querySelectorAll("[data-lang]").forEach(el => el.classList.toggle("active", el.dataset.lang === lang));
+    window.dispatchEvent(new CustomEvent("wl-language-ready"));
+  };
 
   const script = document.createElement("script");
-  script.src = "lang/" + lang + ".js";
-  script.onload = applyTranslations;
+  script.src = `lang/${lang}.js`;
+  script.onload = window.applyWhiteLabelTranslations;
   document.head.appendChild(script);
 })();
