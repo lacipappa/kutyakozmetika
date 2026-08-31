@@ -1,5 +1,4 @@
-window.MANCS_TRANSLATIONS = window.MANCS_TRANSLATIONS || {};
-window.MANCS_TRANSLATIONS.hu = {
+{
   "announcement": "🐾 Új vendégeket is szeretettel várunk",
   "book": "Időpontfoglalás →",
   "salon": "KUTYAKOZMETIKA",
