@@ -1,5 +1,4 @@
-window.MANCS_TRANSLATIONS = window.MANCS_TRANSLATIONS || {};
-window.MANCS_TRANSLATIONS.en = {
+{
   "announcement": "🐾 New clients are warmly welcome",
   "book": "Book an appointment →",
   "salon": "DOG GROOMING",
@@ -110,4 +109,4 @@ window.MANCS_TRANSLATIONS.en = {
   "free_gallery_text": "Free sample images for personalising the template.",
   "sources_title": "Image credits",
   "sources_note": "The demo images used on this website are loaded from Unsplash."
-};
+}
