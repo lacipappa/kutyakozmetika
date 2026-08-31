@@ -54,7 +54,7 @@
     .note{margin-top:36px;background:#3b2b22;color:#f7eee6;border-radius:var(--radius);padding:28px}
     .note strong{color:#fff}.note p{margin:5px 0 0;color:#e3d5ca}
     footer{border-top:1px solid var(--line);padding:28px 0 38px;color:var(--muted)}
-    .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.9rem;align-items:center}.source-lang{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.source-lang button{border:1px solid var(--line);background:#fffaf5;color:var(--ink);border-radius:999px;padding:7px 10px;font-weight:800;cursor:pointer}.source-lang button.active{background:var(--accent);border-color:var(--accent);color:#fff}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.9rem;align-items:center}.source-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.source-lang{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.source-lang button{border:1px solid var(--line);background:#fffaf5;color:var(--ink);border-radius:999px;padding:7px 10px;font-weight:800;cursor:pointer}.source-lang button.active{background:var(--accent);border-color:var(--accent);color:#fff}
     @media(max-width:820px){.intro,.source-grid{grid-template-columns:1fr}.hero{padding:58px 0 50px}.source-card img{height:250px}}
     @media(max-width:560px){.container{width:min(100% - 24px,1160px)}.nav{min-height:68px}.back{padding:9px 12px;font-size:.87rem}.hero:after{display:none}.source-card img{height:220px}.meta-row{grid-template-columns:1fr;gap:1px}.source-body{padding:20px}}
   </style>
@@ -63,7 +63,7 @@
   <header class="topbar">
     <div class="container nav">
       <a class="logo" href="./">🐾 Mancs <span>&amp; Móka</span></a>
-      <a class="back" href="./" data-i18n="src_back">← Vissza a főoldalra</a>
+      <div class="source-actions"><a class="back" href="./" data-i18n="src_back">← Vissza a főoldalra</a><div class="source-lang"><span data-i18n="src_lang">Nyelv</span><button type="button" data-lang="hu">HU</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="es">ES</button></div></div>
     </div>
   </header>
 
@@ -193,7 +193,7 @@
   <footer>
     <div class="container footer-row">
       <span>© 2026 Mancs &amp; Móka Demo · MesterWeb</span>
-      <div class="source-lang"><span data-i18n="src_lang">Nyelv</span><button type="button" data-lang="hu">HU</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="es">ES</button></div><span data-i18n="src_footer">Unsplash képforrások</span>
+      <span data-i18n="src_footer">Unsplash képforrások</span>
     </div>
   </footer>
 
