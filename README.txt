@@ -23,4 +23,3 @@ Az időpontkérő űrlap statikus tárhelyen is használható: WhatsApp üzenete
 
 Képforrások: kepforrasok.html
 MesterWeb: https://mesterweb-nco7.onrender.com
-
