@@ -1,5 +1,4 @@
-window.MANCS_TRANSLATIONS = window.MANCS_TRANSLATIONS || {};
-window.MANCS_TRANSLATIONS.es = {
+{
   "announcement": "🐾 También damos la bienvenida a nuevos clientes",
   "book": "Pedir cita →",
   "salon": "PELUQUERÍA CANINA",
